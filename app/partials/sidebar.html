@@ -29,19 +29,26 @@
     <li class="header">HEADER</li>
     <!-- Optionally, you can add icons to the links -->
     <li ng-class="{'active': $state.current.name === 'root.dashboard'}"><a ui-sref="root.dashboard"><span>Dashboard</span></a><</li>
-    <li ng-class="{'active': $state.includes('root.table')}"><a ui-sref="root.table.list"><span>Table</span></a></li>
-    <li class="treeview" ng-class="{'active': treeview[0]}">
-      <a href="#" ng-click="treeview[0] = !treeview[0]"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <li class="treeview" ng-class="{'active': treeview[0] || ['table1', 'table2'].indexOf($state.params.tableName) >= 0}">
+      <a ng-click="treeview[0] = !treeview[0]"><span>Tables</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">
-        <li><a href="#">Link in level 2</a></li>
-        <li><a href="#">Link in level 2</a></li>
+        <li ng-class="{'active': $state.params.tableName === 'table1'}">
+          <a ui-sref="root.table.list({tableName: 'table1'})"><span>Table 1</span></a>
+        </li>
+        <li ng-class="{'active': $state.params.tableName === 'table2'}">
+          <a ui-sref="root.table.list({tableName: 'table2'})"><span>Table 2</span></a>
+        </li>
       </ul>
     </li>
-    <li class="treeview" ng-class="{'active': treeview[1]}">
-      <a href="#" ng-click="treeview[1] = !treeview[1]"><span>Another Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <li class="treeview" ng-class="{'active': treeview[1] || ['table3', 'table4'].indexOf($state.params.tableName) >= 0}">
+      <a href="#" ng-click="treeview[1] = !treeview[1]"><span>Another Tables</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">
-        <li><a href="#">Link in level 2</a></li>
-        <li><a href="#">Link in level 2</a></li>
+        <li ng-class="{'active': $state.params.tableName === 'table3'}">
+          <a ui-sref="root.table.list({tableName: 'table3'})"><span>Table 3</span></a>
+        </li>
+        <li ng-class="{'active': $state.params.tableName === 'table4'}">
+          <a ui-sref="root.table.list({tableName: 'table4'})"><span>Table 4</span></a>
+        </li>
       </ul>
     </li>
   </ul><!-- /.sidebar-menu -->

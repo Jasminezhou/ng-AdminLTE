@@ -4,7 +4,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Responsive Hover Smart Table</h3>
+          <h3 class="box-title">List view of {{tableName}}</h3>
           <div class="box-tools">
             <div class="input-group">
               <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
@@ -37,7 +37,7 @@
                 </button>
                 <a ng-href="mailto:{{row.email}}">email</a></td>
               <td>
-                <button type="button" ng-click="$state.go('root.table.edit')" class="btn btn-sm btn-info">
+                <button type="button" ng-click="$state.go('root.table.edit', {tableName: tableName, recordId: $index})" class="btn btn-sm btn-info">
                   <i class="glyphicon glyphicon-edit">
                   </i>
                 </button>
