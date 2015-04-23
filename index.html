@@ -29,7 +29,7 @@
     <script src="app/directives.js"></script>
     <script src="app/filters.js"></script>
   </head>
-  <body class="skin-blue fixed" ng-class="{'sidebar-collapse': sidebarCollapse}" ng-app="ngAdminLteApp">
+  <body class="skin-blue fixed" ng-class="{'sidebar-collapse': sidebarCollapse, 'sidebar-open': !sidebarCollapse}" ng-app="ngAdminLteApp">
     <div class="wrapper">
       <header class="main-header" ui-view="header"></header>
       <!-- Left side column. contains the logo and sidebar -->
