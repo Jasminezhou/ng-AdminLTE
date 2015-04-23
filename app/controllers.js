@@ -26,4 +26,12 @@ angular.module('ngAdminLteApp.controllers', [])
 .controller('TableEditCtrl', function($scope, $state){
   $scope.tableName = $state.params.tableName;
   $scope.recordId = $state.params.recordId;
+  // Datepicker
+  $scope.open = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
+  };
+
 })
