@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ng AdminLTE 2</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    <!-- FontAwesome 4.3.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons 2.0.0 -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />    
+    <!-- Theme style -->
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins 
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="css/skins/skin-blue.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include angular.js, ui-bootstrap.js and angular-ui-router.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-sanitize.js"></script>
+
+    <!-- Angular is taking control -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>
+    <script src="app/services.js"></script>
+    <script src="app/directives.js"></script>
+    <script src="app/filters.js"></script>
+  </head>
+  <body class="skin-blue fixed" ng-class="{'sidebar-collapse': sidebarCollapse}" ng-app="ngAdminLteApp">
+    <div class="wrapper">
+      <header class="main-header" ui-view="header"></header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar" ui-view="sidebar"></aside>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" ui-view="main"></div>
+      <footer class="main-footer" ui-view="footer"></footer>
+    </div>
+  </body>
+</html>
