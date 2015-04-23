@@ -18,19 +18,11 @@
           <table st-table="rowCollection" class="table table-striped table-hover">
             <thead>
             <tr>
-              <th st-sort="firstName">first name</th>
-              <th st-sort="lastName">last name</th>
-              <th st-sort="birthDate">birth date</th>
-              <th st-sort="balance">balance</th>
+              <th>first name</th>
+              <th>last name</th>
+              <th>birth date</th>
+              <th>balance</th>
               <th>email</th>
-            </tr>
-            <tr>
-              <th>
-                <input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
-              </th>
-              <th colspan="4">
-                <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
-              </th>
             </tr>
             </thead>
             <tbody>
@@ -39,16 +31,23 @@
               <td>{{row.lastName}}</td>
               <td>{{row.birthDate | date}}</td>
               <td>{{row.balance | currency}}</td>
-              <td><a ng-href="mailto:{{row.email}}">email</a></td>
+              <td>
+                <button class="btn btn-sm" popover-placement="top" popover="{{row.email}}" type="button">
+                  <i class="glyphicon glyphicon-eye-open"></i>
+                </button>
+                <a ng-href="mailto:{{row.email}}">email</a></td>
+              <td>
+                <button type="button" ng-click="$state.go('root.table.edit')" class="btn btn-sm btn-info">
+                  <i class="glyphicon glyphicon-edit">
+                  </i>
+                </button>
+                <button type="button" ng-click="removeRow(row)" class="btn btn-sm btn-danger">
+                  <i class="glyphicon glyphicon-remove-circle">
+                  </i>
+                </button>
+              </td>
             </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5" class="text-center">
-                  <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
-                </td>
-              </tr>
-            </tfoot>
           </table>
         </div><!-- /.box-body -->
       </div><!-- /.box -->

@@ -62,11 +62,25 @@ angular.module('ngAdminLteApp', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'sma
 
         // table
         .state('root.table', {
-            url: '/table',
+            abstract: true,
+        })
+        // table list view
+        .state('root.table.list', {
+            url: '/table/list',
             views: {
                 'master@root': {
-                    templateUrl: 'app/partials/table.html',
-                    controller: 'TableCtrl'
+                    templateUrl: 'app/partials/table_list.html',
+                    controller: 'TableListCtrl'
+                }
+            }
+        })
+        // table edit view
+        .state('root.table.edit', {
+            url: '/table/edit',
+            views: {
+                'master@root': {
+                    templateUrl: 'app/partials/table_edit.html',
+                    controller: 'TableEditCtrl'
                 }
             }
         })

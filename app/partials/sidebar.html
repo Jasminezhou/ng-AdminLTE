@@ -29,7 +29,7 @@
     <li class="header">HEADER</li>
     <!-- Optionally, you can add icons to the links -->
     <li ng-class="{'active': $state.current.name === 'root.dashboard'}"><a ui-sref="root.dashboard"><span>Dashboard</span></a><</li>
-    <li ng-class="{'active': $state.current.name === 'root.table'}"><a ui-sref="root.table"><span>Table</span></a></li>
+    <li ng-class="{'active': $state.includes('root.table')}"><a ui-sref="root.table.list"><span>Table</span></a></li>
     <li class="treeview" ng-class="{'active': treeview[0]}">
       <a href="#" ng-click="treeview[0] = !treeview[0]"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">

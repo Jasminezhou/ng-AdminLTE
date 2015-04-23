@@ -8,32 +8,18 @@ angular.module('ngAdminLteApp.controllers', [])
   };
 })
 .controller('DashboardCtrl', function($scope){ })
-.controller('TableCtrl', function($scope){
-    var
-        nameList = ['Pierre', 'Pol', 'Jacques', 'Robert', 'Elisa'],
-        familyName = ['Dupont', 'Germain', 'Delcourt', 'bjip', 'Menez'];
+.controller('TableListCtrl', function($scope){
+    $scope.rowCollection = [
+        {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
+        {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
+        {firstName: 'Francoise', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'}
+    ];
 
-    function createRandomItem() {
-        var
-            firstName = nameList[Math.floor(Math.random() * 4)],
-            lastName = familyName[Math.floor(Math.random() * 4)],
-            age = Math.floor(Math.random() * 100),
-            email = firstName + lastName + '@whatever.com',
-            balance = Math.random() * 3000;
-
-        return{
-            firstName: firstName,
-            lastName: lastName,
-            age: age,
-            email: email,
-            balance: balance
-        };
-    }
-
-    $scope.itemsByPage=15;
-
-    $scope.rowCollection = [];
-    for (var j = 0; j < 200; j++) {
-        $scope.rowCollection.push(createRandomItem());
+    $scope.removeRow = function removeRow(row) {
+        var index = $scope.rowCollection.indexOf(row);
+        if (index !== -1) {
+            $scope.rowCollection.splice(index, 1);
+        }
     }
 })
+.controller('TableEditCtrl', function($scope){ })
