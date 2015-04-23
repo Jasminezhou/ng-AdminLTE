@@ -1,4 +1,4 @@
-angular.module('ngAdminLteApp', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'ngAdminLteApp.controllers', 'ngAdminLteApp.directives', 'ngAdminLteApp.filters'])
+angular.module('ngAdminLteApp', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'smart-table', 'ngAdminLteApp.controllers', 'ngAdminLteApp.directives', 'ngAdminLteApp.filters'])
 
 .run(
   [          '$rootScope', '$state', '$stateParams',
@@ -56,6 +56,17 @@ angular.module('ngAdminLteApp', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'ngA
                 'master@root': {
                     templateUrl: 'app/partials/dashboard.html',
                     controller: 'DashboardCtrl'
+                }
+            }
+        })
+
+        // table
+        .state('root.table', {
+            url: '/table',
+            views: {
+                'master@root': {
+                    templateUrl: 'app/partials/table.html',
+                    controller: 'TableCtrl'
                 }
             }
         })
