@@ -1,3 +1,16 @@
+/* Start AdminLTE.css fixes*/
+.box-header > .box-tools {
+	left: 5px;
+}
+
+.box-header > .box-tools button {
+	margin: 0 1px;
+}
+
+/* End AdminLTE.css fixes*/
+
+
+
 /* Start of Smart Table Styles */
 .st-sort-ascent:before{
 	content: '\25B2';

@@ -2,11 +2,21 @@
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
+      <h3 class="box-title">List view of {{tableName}}</h3>
       <div class="box" st-table="rowCollection">
         <div class="box-header">
-          <h3 class="box-title">List view of {{tableName}}</h3>
+          <div class="box-title"></div>
           <div class="box-tools">
             <div class="input-group">
+                <button type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create New
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Config
+                </button>
               <input st-search="" type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
               <div class="input-group-btn">
                 <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
