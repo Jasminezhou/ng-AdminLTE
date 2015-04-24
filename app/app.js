@@ -69,7 +69,16 @@ angular.module('ngAdminLteApp', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'sma
                 }
             }
         })       
-
+        // lock screen
+        .state('root.lock', {
+            url: '/lock',
+            views: {
+                'master@root': {
+                    templateUrl: 'app/partials/lock.html',
+                    controller: 'LockCtrl'
+                }
+            }
+        })    
         // Dashboard
         .state('root.dashboard', {
             url: '/',

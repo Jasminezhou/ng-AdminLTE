@@ -8,6 +8,7 @@ angular.module('ngAdminLteApp.controllers', [])
   };
 })
 .controller('LoginCtrl', function($scope){ })
+.controller('LockCtrl', function($scope){ })
 .controller('RegisterCtrl', function($scope){ })
 .controller('DashboardCtrl', function($scope){ })
 .controller('TableListCtrl', function($scope, $state){
