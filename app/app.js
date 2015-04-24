@@ -49,6 +49,27 @@ angular.module('ngAdminLteApp', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'sma
             }
         })
 
+        // login
+        .state('root.login', {
+            url: '/login',
+            views: {
+                'master@root': {
+                    templateUrl: 'app/partials/login.html',
+                    controller: 'LoginCtrl'
+                }
+            }
+        })
+        // register
+        .state('root.register', {
+            url: '/register',
+            views: {
+                'master@root': {
+                    templateUrl: 'app/partials/register.html',
+                    controller: 'RegisterCtrl'
+                }
+            }
+        })       
+
         // Dashboard
         .state('root.dashboard', {
             url: '/',

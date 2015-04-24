@@ -7,6 +7,16 @@
 	margin: 0 1px;
 }
 
+.fullscreen-wrapper {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 99999;
+  background-color: #d2d6de;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 /* End AdminLTE.css fixes*/
 
 

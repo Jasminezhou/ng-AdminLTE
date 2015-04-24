@@ -7,6 +7,8 @@ angular.module('ngAdminLteApp.controllers', [])
     $rootScope.sidebarCollapse = !$rootScope.sidebarCollapse;
   };
 })
+.controller('LoginCtrl', function($scope){ })
+.controller('RegisterCtrl', function($scope){ })
 .controller('DashboardCtrl', function($scope){ })
 .controller('TableListCtrl', function($scope, $state){
   $scope.tableName = $state.params.tableName;
